@@ -105,3 +105,25 @@ add 了 testFile 中的修改，没有 add README.md 中的修改，然后直接
 		`$ git diff HEAD`
 		
 		**好习惯:在执行git diff HEAD命令，查看本次提交与上次提交之间有什么差别，等 确认完毕后再进行提交。**
+		
+* git branch——显示分支一览表
+
+	`$ git branch`
+	
+*  git checkout -b——创建、切换分支
+
+	`$ git checkout -b feature-A`
+		执行下面的命令，创建名为 feature-A 的分支
+	
+* 切换到 master 分支
+
+	`$ git checkout master`
+	
+* 切换回上一个分支
+
+	`$ git checkout -`
+	
+* git merge——合并分支
+
+	* 首先切换到 master 分支
+	* 然后合并 feature-A 分支
