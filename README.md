@@ -118,6 +118,12 @@ add 了 testFile 中的修改，没有 add README.md 中的修改，然后直接
 
 	`$ git branch`
 	
+* git branch -a 查看当前分支的相关信息
+
+	`$ git branch -a`
+	
+	可以同时显示本地仓库和远程仓库的分支信息
+	
 *  git checkout -b——创建、切换分支
 
 	`$ git checkout -b feature-A`
@@ -229,6 +235,23 @@ Please supply the message using either -m or -F option.
 			```
 			
 			现在，在远程仓库的 GitHub 页面就可以查看到 feature-D 分支了。
+			
+*  git clone——获取远程仓库
+
+	`git clone git@github.com:wenchao8023/git-tutorial.git`
+	
+	* 查看
+
+		```
+		$ git branch -a * master		remotes/origin/HEAD -> origin/master 
+		remotes/origin/feature-D
+		 remotes/origin/master
+		```
 		
+	* 获取远程的 feature-D 分支
+
+		`git checkout -b feature-D origin/feature-D`
+		
+		b 参数的后面是本地仓库中新建分支的名称。为了便于理解，我 们仍将其命名为 feature-D，让它与远程仓库的对应分支保持同名。
 		
 		
