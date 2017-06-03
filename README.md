@@ -70,3 +70,38 @@
 		执行完git commit命令后再来查看当前状态。
 		
 		`$ git status`
+
+
+---
+add 了 testFile 中的修改，没有 add README.md 中的修改，然后直接 commit，用 xcode 打开 readme 直接保存，导致在 MD 中编辑的内容被同步了。T_T
+---
+
+* git log——查看提交日志
+
+	git log命令可以查看以往仓库中提交的日志。
+	
+	* 只显示提交信息的第一行
+
+		`$ git log --pretty=short`
+		
+	* 显示文件的改动
+	
+		`$ git log -p`
+		
+		* 只查看 README.md 文件的提交日 志以及提交前后的差别。
+
+			`$ git log -p README.md`
+			
+* git diff——查看更改前后的差别
+
+	> git diff命令可以查看工作树、暂存区、最新提交之间的差别。
+	
+	* 查看工作树和暂存区的差别
+
+		`$ git diff`
+		
+	* 查看工作树和最新提交的差别
+
+		`$ git diff HEAD`
+		
+		**好习惯:在执行git diff HEAD命令，查看本次提交与上次提交之间有什么差别，等 确认完毕后再进行提交。**
