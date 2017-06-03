@@ -59,9 +59,13 @@
 		# Initial commit
 	```
 	
-		请不加 - m，直接执行 g i t c o m m i t命令。执行后编辑器就会启 动，并显示如下结果。
+		请不加 - m，直接执行 git commit命令。执行后编辑器就会启 动，并显示如下结果。
 		
-	*  中止提交
+	* 一次完成 add 和 commit 两个操作
+	
+		`git commit -am "评论内容"`
+		
+	*  终止提交
 	
 		如果在编辑器启动后想中止提交，请将提交信息留空并直接关闭编 辑器，随后提交就会被中止。
 		
@@ -131,3 +135,58 @@ add 了 testFile 中的修改，没有 add README.md 中的修改，然后直接
 
 	* 首先切换到 master 分支
 	* 然后合并 feature-A 分支
+
+* git reset——回溯历史版本
+
+	`$ git reset --hard 时间节点`
+	
+* 查看冲突部分并将其解决
+
+	```
+	# Git教程	<<<<<<< HEAD - feature-A	=======	- fix-B	>>>>>>> fix-B	```
+	
+	======= 以上的部分是当前 HEAD 的内容，以下的部分是要合并 的 fix-B 分支中的内容。我们在编辑器中将其改成想要的样子。
+	
+	```
+	# Git教程	- feature-A	- fix-B
+	```
+	
+	冲突解决后，执行git add命令与git commit命令。
+	
+* git commit --amend——修改提交信息
+
+	`$ git commit --amend`
+	
+	要修改上一条提交信息
+	
+	如果保存并退出 vim 编辑界面之后
+	提示：
+	> error: There was a problem with the editor 'vi'.
+Please supply the message using either -m or -F option.
+
+	解决方法：
+	> git config --global core.editor /usr/bin/vim
+	
+	然后再 `$ git commit --amend` 保存并退出就会完成修改
+	
+* git rebase -i——压缩历史【常用】
+
+	> 在合并特性分支之前，如果发现已提交的内容中有些许拼写错误等， 不妨提交一个修改，然后将这个修改包含到前一个提交之中，压缩成一 个历史记录。
+	
+	`$ git rebase -i HEAD~2`
+	
+	> 用上述方式执行 git rebase命令，可以选定当前分支中包含 H E A D(最新提交)在内的两个最新历史记录为对象，并在编辑器中 打开。
+	
+	```
+	pick 7a34294 Add feature-C 
+	pick 6fba227 Fix typo
+		# Rebase 2e7db6f..6fba227 onto 2e7db6f	# Commands:	# p, pick = use commit	# r, reword = use commit, but edit the commit message	# e, edit = use commit, but stop for amending	# s, squash = use commit, but meld into previous commit	# f, fixup = like "squash", but discard this commit's log message 
+	# x, exec = run 	command (the rest of the line) using shell	# These lines can be re-ordered; they are executed from top to bottom. If you 	# remove a line here THAT COMMIT WILL BE LOST.	# However, if you remove everything, the rebase will be aborted.	# Note that empty commits are commented out
+	```
+	
+	将 6fba227 左侧的 pick 部分删除，改写为 fixup。
+	
+	保存编辑器里的内容，关闭编辑器。
+	
+* git remote add——添加远程仓库
+* 	git@github.com:wenchao8023/git-tutorial.git
