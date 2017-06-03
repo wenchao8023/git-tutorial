@@ -254,4 +254,16 @@ Please supply the message using either -m or -F option.
 		
 		b 参数的后面是本地仓库中新建分支的名称。为了便于理解，我 们仍将其命名为 feature-D，让它与远程仓库的对应分支保持同名。
 		
+* git pull——获取最新的远程仓库分支
 		
+	```
+	现在我们放下刚刚操作的目录，回到原先的那个目录下。
+	这边的本地仓库中只创建了 feature-D 分支，并没有在 feature-D 分支中进行任何提交。
+	然而远程仓库的 feature-D 分支中已经有了我们刚刚推送的提交。
+	这时我们就可以使用git pull命令，将本地的feature-D分支更新到最新 状态。
+	【注意】当前分支为 feature-D 分支。
+	```
+	
+	`git pull origin feature-D`
+	
+	**多名开发者在同一个分支中进行作业时，为减少冲突情况的发 生，建议更频繁地进行 push 和 pull 操作。**
