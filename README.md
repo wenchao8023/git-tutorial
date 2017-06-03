@@ -189,4 +189,30 @@ Please supply the message using either -m or -F option.
 	保存编辑器里的内容，关闭编辑器。
 	
 * git remote add——添加远程仓库
-* 	git@github.com:wenchao8023/git-tutorial.git
+
+	* 在 GitHub 上创建的仓库路径为 "git@github.com:wenchao8023/git-tutorial.git"
+	* 用 git remote add命令将它设置 成本地仓库的远程仓库 
+
+		`$ git remote add origin git@github.com:github-book/git-tutorial.git`
+		
+		Git会自动将 git@github.com:github-book/git-tutorial.git远程仓库的 名称设置为 origin(标识符)
+		
+* git push——推送至远程仓库
+
+	* 推送至 master 分支
+		
+		> 如果想将当前分支下本地仓库中的内容推送给远程仓库，需要用到 git push命令。现在假定我们在master分支下进行操作
+		
+		`$ git push -u origin master`
+		
+		```
+		像这样执行git push命令，
+		当前分支的内容就会被推送给远程仓库 origin 的 master 分支。
+		-u参数可以在推送的同时，将 origin 仓库的 master 分支设置为本地仓库当前分支的 upstream(上游)。
+		添加了这个参数，将来 运行 git pull命令从远程仓库获取内容时，
+		本地仓库的这个分支就可 以直接从 origin 的 master 分支获取内容，省去了另外添加参数的麻烦
+		```
+		
+		
+		
+		
