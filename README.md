@@ -213,6 +213,22 @@ Please supply the message using either -m or -F option.
 		本地仓库的这个分支就可 以直接从 origin 的 master 分支获取内容，省去了另外添加参数的麻烦
 		```
 		
+	* 推送至 master 以外的分支
+
+		* 除了 master 分支之外，远程仓库也可以创建其他分支。举个例子，我 们在本地仓库中创建 feature-D 分支，并将它以同名形式 push 至远程仓库。			`$ git checkout -b feature-D`
+		
+		* 我们在本地仓库中创建了 feature-D 分支，现在将它 push 给远程仓 库并保持分支名称不变。	
+			`$ git checkout -b feature-D`
+			
+			```
+			it push -u origin feature-D
+			Total 0 (delta 0), reused 0 (delta 0)
+			To github.com:wenchao8023/git-tutorial.git
+			 * [new branch]      feature-D -> feature-D
+			Branch feature-D set up to track remote branch feature-D from origin.
+			```
+			
+			现在，在远程仓库的 GitHub 页面就可以查看到 feature-D 分支了。
 		
 		
 		
