@@ -92,6 +92,10 @@ add 了 testFile 中的修改，没有 add README.md 中的修改，然后直接
 
 			`$ git log -p README.md`
 			
+	* git log --graph——以图表形式查看分支
+
+		`$ git log --graph`
+		
 * git diff——查看更改前后的差别
 
 	> git diff命令可以查看工作树、暂存区、最新提交之间的差别。
