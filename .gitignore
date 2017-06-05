@@ -1,0 +1,8 @@
+# 忽略指定Files
+# README.md
+# testFile.md
+
+# 忽略文件夹
+# testDir
+testDir/testDir2
+

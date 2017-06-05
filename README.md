@@ -266,4 +266,16 @@ Please supply the message using either -m or -F option.
 	
 	`git pull origin feature-D`
 	
-	**多名开发者在同一个分支中进行作业时，为减少冲突情况的发 生，建议更频繁地进行 push 和 pull 操作。**
+	**多名开发者在同一个分支中进行作业时，为减少冲突情况的发生，建议更频繁地进行 push 和 pull 操作。**
+	
+	
+## 【tips】
+
+1. 解决 UserInterfaceState.xcuserstate 文件带来的影响
+
+	* 退出xcdoe（避免删除该文件之后又产生，造成忽略失败）
+	* 打开终端（Terminal），进入到你的项目目录下
+	* 使用命令：
+		`git rm --cached *.xcuserstate`
+
+
