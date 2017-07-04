@@ -142,6 +142,9 @@ add 了 testFile 中的修改，没有 add README.md 中的修改，然后直接
 	* 首先切换到 master 分支
 	* 然后合并 feature-A 分支
 
+* git branch -d -- 删除分支
+	* $ git branch -d <branchname>
+
 * git reset——回溯历史版本
 
 	`$ git reset --hard 时间节点`
